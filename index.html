@@ -48,6 +48,96 @@
             overflow-x: hidden;
         }
         
+        /* Navbar Styles */
+        .navbar {
+            padding: 1rem 0;
+            transition: background-color 0.3s ease, padding 0.3s ease, box-shadow 0.3s ease;
+            background-color: transparent;
+        }
+        
+        .navbar.scrolled {
+            background-color: rgba(10, 10, 10, 0.95);
+            padding: 0.5rem 0;
+            box-shadow: 0 2px 20px rgba(0, 0, 0, 0.5);
+            backdrop-filter: blur(10px);
+        }
+        
+        .navbar-brand {
+            font-family: var(--font-display);
+            font-size: 1.75rem;
+            letter-spacing: 0.1em;
+            background: linear-gradient(to right, var(--clr-orange), var(--clr-pink));
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            transition: transform 0.3s ease;
+        }
+        
+        .navbar-brand:hover {
+            transform: scale(1.05);
+        }
+        
+        .navbar-nav .nav-link {
+            font-family: var(--font-display);
+            font-size: 0.85rem;
+            letter-spacing: 0.15em;
+            color: var(--clr-white);
+            padding: 0.5rem 1rem;
+            position: relative;
+            transition: color 0.3s ease;
+        }
+        
+        .navbar-nav .nav-link::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 50%;
+            width: 0;
+            height: 2px;
+            background: linear-gradient(to right, var(--clr-orange), var(--clr-pink));
+            transition: width 0.3s ease, left 0.3s ease;
+        }
+        
+        .navbar-nav .nav-link:hover::after,
+        .navbar-nav .nav-link.active::after {
+            width: 80%;
+            left: 10%;
+        }
+        
+        .navbar-nav .nav-link:hover {
+            color: var(--clr-orange);
+        }
+        
+        .navbar-nav .nav-link.active {
+            color: var(--clr-pink);
+        }
+        
+        .navbar-toggler {
+            border: none;
+            padding: 0.5rem;
+        }
+        
+        .navbar-toggler:focus {
+            box-shadow: none;
+        }
+        
+        .navbar-toggler-icon {
+            background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 30 30'%3e%3cpath stroke='rgba%28255, 87, 34, 1%29' stroke-linecap='round' stroke-miterlimit='10' stroke-width='2' d='M4 7h22M4 15h22M4 23h22'/%3e%3c/svg%3e");
+        }
+        
+        @media (max-width: 991px) {
+            .navbar-collapse {
+                background-color: rgba(10, 10, 10, 0.98);
+                padding: 1rem;
+                margin-top: 1rem;
+                border-radius: 4px;
+            }
+            
+            .navbar-nav .nav-link {
+                padding: 0.75rem 1rem;
+            }
+        }
+        
         /* Scroll Animation Base */
         .reveal {
             opacity: 0;
@@ -649,8 +739,40 @@
 </head>
 <body>
 
+    <!-- Fixed Navbar -->
+    <nav class="navbar navbar-expand-lg navbar-dark fixed-top" id="mainNav">
+        <div class="container">
+            <a class="navbar-brand" href="#hero">FUEL</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item">
+                        <a class="nav-link" href="#definitions">The Movement</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#numbers">The Data</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#pay-gap">Pay Gap</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#voices">Player Voices</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#campaign">The Campaign</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#bottom-line">Bottom Line</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
     <!-- Hero Section -->
-    <section class="hero">
+    <section class="hero" id="hero">
         <div class="hero-content">
             <h1 class="hero-tagline">
                 <span class="line-1">The Noise.</span>
@@ -665,7 +787,7 @@
     </section>
 
     <!-- Definitions Section -->
-    <section class="section-dark">
+    <section class="section-dark" id="definitions">
         <div class="container">
             <div class="definition-block reveal">
                 <h2 class="definition-term noise">The Noise</h2>
@@ -702,7 +824,7 @@
     <hr class="divider">
 
     <!-- Numbers Section -->
-    <section class="section-light">
+    <section class="section-light" id="numbers">
         <div class="container">
             <span class="section-label reveal">The Data</span>
             <h2 class="headline reveal">Numbers Don't Lie</h2>
@@ -788,7 +910,7 @@
     <hr class="divider">
 
     <!-- The Pay Gap Section -->
-    <section class="section-dark">
+    <section class="section-dark" id="pay-gap">
         <div class="container">
             <span class="section-label reveal">The Reality</span>
             <h2 class="headline reveal">The Pay Gap</h2>
@@ -833,7 +955,7 @@
     </section>
 
     <!-- Player Voices Section -->
-    <section class="section-light">
+    <section class="section-light" id="voices">
         <div class="container">
             <span class="section-label reveal">In Their Words</span>
             <h2 class="headline-editorial reveal">The Players <em>Speak Out</em></h2>
@@ -925,7 +1047,7 @@
     </section>
 
     <!-- Inside Fuel Section -->
-    <section class="narrative-section">
+    <section class="narrative-section" id="campaign">
         <div class="container">
             <span class="section-label reveal">The Campaign</span>
             <h2 class="headline reveal">Inside Fuel</h2>
@@ -980,7 +1102,7 @@
     <hr class="divider">
 
     <!-- The Real Bottom Line Section -->
-    <section class="section-light">
+    <section class="section-light" id="bottom-line">
         <div class="container">
             <span class="section-label reveal">The Conclusion</span>
             <h2 class="headline reveal">The Real Bottom Line</h2>
@@ -1025,6 +1147,64 @@
     
     <!-- Scroll Animation Script -->
     <script>
+        // Navbar scroll effect
+        const navbar = document.getElementById('mainNav');
+        const navLinks = document.querySelectorAll('.navbar-nav .nav-link');
+        const sections = document.querySelectorAll('section[id]');
+        
+        function handleNavbarScroll() {
+            if (window.scrollY > 100) {
+                navbar.classList.add('scrolled');
+            } else {
+                navbar.classList.remove('scrolled');
+            }
+        }
+        
+        // Update active nav link based on scroll position
+        function updateActiveNavLink() {
+            const scrollPosition = window.scrollY + 150;
+            
+            sections.forEach(section => {
+                const sectionTop = section.offsetTop;
+                const sectionHeight = section.offsetHeight;
+                const sectionId = section.getAttribute('id');
+                
+                if (scrollPosition >= sectionTop && scrollPosition < sectionTop + sectionHeight) {
+                    navLinks.forEach(link => {
+                        link.classList.remove('active');
+                        if (link.getAttribute('href') === `#${sectionId}`) {
+                            link.classList.add('active');
+                        }
+                    });
+                }
+            });
+        }
+        
+        // Smooth scroll for nav links with offset for fixed navbar
+        navLinks.forEach(link => {
+            link.addEventListener('click', function(e) {
+                e.preventDefault();
+                const targetId = this.getAttribute('href');
+                const targetSection = document.querySelector(targetId);
+                const navbarHeight = navbar.offsetHeight;
+                
+                if (targetSection) {
+                    const targetPosition = targetSection.offsetTop - navbarHeight;
+                    window.scrollTo({
+                        top: targetPosition,
+                        behavior: 'smooth'
+                    });
+                }
+                
+                // Close mobile menu if open
+                const navbarCollapse = document.querySelector('.navbar-collapse');
+                if (navbarCollapse.classList.contains('show')) {
+                    const bsCollapse = bootstrap.Collapse.getInstance(navbarCollapse);
+                    bsCollapse.hide();
+                }
+            });
+        });
+        
         // Reveal on Scroll
         function reveal() {
             const reveals = document.querySelectorAll('.reveal, .reveal-left, .reveal-right, .reveal-scale');
@@ -1067,9 +1247,15 @@
         window.addEventListener('scroll', () => {
             reveal();
             parallax();
+            handleNavbarScroll();
+            updateActiveNavLink();
         });
         
-        window.addEventListener('load', reveal);
+        window.addEventListener('load', () => {
+            reveal();
+            handleNavbarScroll();
+            updateActiveNavLink();
+        });
         
         // Add stagger delay to grid items
         document.querySelectorAll('.stats-grid .stat-item, .voices-grid .voice-item').forEach((item, index) => {
