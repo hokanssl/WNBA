@@ -1,0 +1,1081 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>The Noise. The Movement. The Gatekeepers.</title>
+    
+    <!-- Bootstrap 5.3.7 -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.7/dist/css/bootstrap.min.css" rel="stylesheet">
+    
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Playfair+Display:ital,wght@0,400;0,700;1,400&family=Source+Serif+4:opsz,wght@8..60,400;8..60,600&display=swap" rel="stylesheet">
+    
+    <style>
+        :root {
+            --clr-black: #0a0a0a;
+            --clr-white: #fafafa;
+            --clr-orange: #ff5722;
+            --clr-pink: #e91e8c;
+            --clr-gold: #ffc107;
+            --clr-sky-blue: #6ec6e6;
+            --clr-gray: #2a2a2a;
+            --clr-gray-light: #e0e0e0;
+            
+            --font-display: 'Bebas Neue', sans-serif;
+            --font-editorial: 'Playfair Display', serif;
+            --font-body: 'Source Serif 4', serif;
+        }
+        
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        html {
+            scroll-behavior: smooth;
+        }
+        
+        body {
+            font-family: var(--font-body);
+            background-color: var(--clr-black);
+            color: var(--clr-white);
+            line-height: 1.7;
+            font-size: 1.125rem;
+            overflow-x: hidden;
+        }
+        
+        /* Scroll Animation Base */
+        .reveal {
+            opacity: 0;
+            transform: translateY(60px);
+            transition: opacity 0.8s ease-out, transform 0.8s ease-out;
+        }
+        
+        .reveal.active {
+            opacity: 1;
+            transform: translateY(0);
+        }
+        
+        .reveal-left {
+            opacity: 0;
+            transform: translateX(-80px);
+            transition: opacity 0.8s ease-out, transform 0.8s ease-out;
+        }
+        
+        .reveal-left.active {
+            opacity: 1;
+            transform: translateX(0);
+        }
+        
+        .reveal-right {
+            opacity: 0;
+            transform: translateX(80px);
+            transition: opacity 0.8s ease-out, transform 0.8s ease-out;
+        }
+        
+        .reveal-right.active {
+            opacity: 1;
+            transform: translateX(0);
+        }
+        
+        .reveal-scale {
+            opacity: 0;
+            transform: scale(0.9);
+            transition: opacity 0.8s ease-out, transform 0.8s ease-out;
+        }
+        
+        .reveal-scale.active {
+            opacity: 1;
+            transform: scale(1);
+        }
+        
+        /* Hero Section */
+        .hero {
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            position: relative;
+            background: linear-gradient(135deg, var(--clr-black) 0%, #1a1a2e 50%, var(--clr-black) 100%);
+            overflow: hidden;
+            padding: 2rem;
+        }
+        
+        .hero::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: 
+                radial-gradient(circle at 20% 80%, rgba(233, 30, 140, 0.15) 0%, transparent 50%),
+                radial-gradient(circle at 80% 20%, rgba(255, 87, 34, 0.15) 0%, transparent 50%);
+            pointer-events: none;
+        }
+        
+        .hero-content {
+            text-align: center;
+            z-index: 1;
+            max-width: 1200px;
+        }
+        
+        .hero-tagline {
+            font-family: var(--font-display);
+            font-size: clamp(3rem, 10vw, 8rem);
+            line-height: 0.95;
+            letter-spacing: 0.02em;
+            margin-bottom: 1.5rem;
+            animation: fadeInUp 1s ease-out;
+        }
+        
+        .hero-tagline .line-1 {
+            color: var(--clr-orange);
+            display: block;
+        }
+        
+        .hero-tagline .line-2 {
+            color: var(--clr-pink);
+            display: block;
+        }
+        
+        .hero-tagline .line-3 {
+            color: var(--clr-gold);
+            display: block;
+        }
+        
+        .hero-subtitle {
+            font-family: var(--font-editorial);
+            font-size: clamp(1.25rem, 3vw, 2rem);
+            font-style: italic;
+            color: var(--clr-white);
+            max-width: 900px;
+            margin: 0 auto;
+            animation: fadeInUp 1s ease-out 0.3s both;
+        }
+        
+        .hero-subtitle strong {
+            color: var(--clr-pink);
+            font-style: normal;
+        }
+        
+        .scroll-indicator {
+            position: absolute;
+            bottom: 2rem;
+            left: 50%;
+            transform: translateX(-50%);
+            animation: bounce 2s infinite;
+        }
+        
+        .scroll-indicator span {
+            display: block;
+            width: 2px;
+            height: 40px;
+            background: linear-gradient(to bottom, var(--clr-orange), transparent);
+            margin: 0 auto;
+        }
+        
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(40px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+        
+        @keyframes bounce {
+            0%, 20%, 50%, 80%, 100% { transform: translateX(-50%) translateY(0); }
+            40% { transform: translateX(-50%) translateY(-10px); }
+            60% { transform: translateX(-50%) translateY(-5px); }
+        }
+        
+        /* Section Styling */
+        section {
+            padding: 6rem 0;
+            position: relative;
+        }
+        
+        .section-dark {
+            background-color: var(--clr-black);
+        }
+        
+        .section-light {
+            background-color: var(--clr-white);
+            color: var(--clr-black);
+        }
+        
+        .section-accent {
+            background: linear-gradient(135deg, var(--clr-pink) 0%, var(--clr-orange) 100%);
+            color: var(--clr-white);
+        }
+        
+        .section-editorial {
+            background-color: #f5f0e8;
+            color: var(--clr-black);
+        }
+        
+        /* Typography */
+        .section-label {
+            font-family: var(--font-display);
+            font-size: 0.875rem;
+            letter-spacing: 0.3em;
+            text-transform: uppercase;
+            color: var(--clr-orange);
+            margin-bottom: 1rem;
+            display: block;
+        }
+        
+        .section-light .section-label {
+            color: var(--clr-pink);
+        }
+        
+        .headline {
+            font-family: var(--font-display);
+            font-size: clamp(2.5rem, 6vw, 5rem);
+            line-height: 1;
+            letter-spacing: 0.02em;
+            margin-bottom: 2rem;
+        }
+        
+        .headline-editorial {
+            font-family: var(--font-editorial);
+            font-size: clamp(2rem, 5vw, 3.5rem);
+            line-height: 1.2;
+            font-weight: 400;
+            margin-bottom: 2rem;
+        }
+        
+        .headline-editorial em {
+            font-style: italic;
+            color: var(--clr-pink);
+        }
+        
+        .section-light .headline-editorial em {
+            color: var(--clr-orange);
+        }
+        
+        .body-text {
+            font-size: 1.125rem;
+            line-height: 1.8;
+            max-width: 720px;
+        }
+        
+        .body-text + .body-text {
+            margin-top: 1.5rem;
+        }
+        
+        /* Definition Blocks */
+        .definition-block {
+            padding: 3rem 0;
+            border-bottom: 1px solid rgba(255,255,255,0.1);
+        }
+        
+        .definition-block:last-child {
+            border-bottom: none;
+        }
+        
+        .definition-term {
+            font-family: var(--font-display);
+            font-size: clamp(2rem, 5vw, 4rem);
+            margin-bottom: 1rem;
+        }
+        
+        .definition-term.noise { color: var(--clr-orange); }
+        .definition-term.movement { color: var(--clr-pink); }
+        .definition-term.gatekeepers { color: var(--clr-gold); }
+        
+        .definition-text {
+            font-family: var(--font-editorial);
+            font-size: 1.25rem;
+            font-style: italic;
+            max-width: 800px;
+            line-height: 1.7;
+        }
+        
+        /* Image Containers */
+        .img-container {
+            position: relative;
+            overflow: hidden;
+            border-radius: 4px;
+        }
+        
+        .img-container img {
+            width: 100%;
+            height: auto;
+            display: block;
+            transition: transform 0.6s ease;
+        }
+        
+        .img-container:hover img {
+            transform: scale(1.03);
+        }
+        
+        .img-full {
+            width: 100%;
+            margin: 3rem 0;
+        }
+        
+        .img-caption {
+            font-size: 0.875rem;
+            color: rgba(255,255,255,0.6);
+            margin-top: 0.75rem;
+            font-style: italic;
+        }
+        
+        .section-light .img-caption {
+            color: rgba(0,0,0,0.6);
+        }
+        
+        /* Placeholder Image */
+        .img-placeholder {
+            background: linear-gradient(135deg, var(--clr-gray) 0%, #3a3a3a 100%);
+            min-height: 300px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border-radius: 4px;
+            border: 2px dashed rgba(255,255,255,0.2);
+        }
+        
+        .img-placeholder span {
+            font-family: var(--font-display);
+            font-size: 1.25rem;
+            letter-spacing: 0.1em;
+            color: rgba(255,255,255,0.4);
+        }
+        
+        .section-light .img-placeholder {
+            background: linear-gradient(135deg, #e0e0e0 0%, #d0d0d0 100%);
+            border-color: rgba(0,0,0,0.2);
+        }
+        
+        .section-light .img-placeholder span {
+            color: rgba(0,0,0,0.4);
+        }
+        
+        /* Quote Block */
+        .quote-block {
+            padding: 3rem 0;
+            border-left: 4px solid var(--clr-pink);
+            padding-left: 2rem;
+            margin: 3rem 0;
+        }
+        
+        .quote-text {
+            font-family: var(--font-editorial);
+            font-size: clamp(1.5rem, 3vw, 2rem);
+            font-style: italic;
+            line-height: 1.5;
+            margin-bottom: 1rem;
+        }
+        
+        .quote-author {
+            font-family: var(--font-display);
+            font-size: 1rem;
+            letter-spacing: 0.1em;
+            color: var(--clr-orange);
+        }
+        
+        .section-light .quote-author {
+            color: var(--clr-pink);
+        }
+        
+        /* Stats Grid */
+        .stats-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 2rem;
+            margin: 3rem 0;
+        }
+        
+        .stat-item {
+            text-align: center;
+            padding: 2rem;
+            background: rgba(255,255,255,0.05);
+            border-radius: 4px;
+            transition: transform 0.3s ease, background 0.3s ease;
+        }
+        
+        .stat-item:hover {
+            transform: translateY(-5px);
+            background: rgba(255,255,255,0.1);
+        }
+        
+        .stat-number {
+            font-family: var(--font-display);
+            font-size: clamp(2.5rem, 5vw, 4rem);
+            color: var(--clr-orange);
+            line-height: 1;
+            margin-bottom: 0.5rem;
+        }
+        
+        .stat-label {
+            font-family: var(--font-body);
+            font-size: 0.9rem;
+            text-transform: uppercase;
+            letter-spacing: 0.1em;
+            opacity: 0.8;
+        }
+        
+        /* Two Column Layout */
+        .two-col {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 4rem;
+            align-items: center;
+        }
+        
+        @media (max-width: 991px) {
+            .two-col {
+                grid-template-columns: 1fr;
+                gap: 2rem;
+            }
+        }
+        
+        /* Highlight Text */
+        .highlight {
+            background: linear-gradient(to right, var(--clr-pink), var(--clr-orange));
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+        
+        .section-light .highlight {
+            background: linear-gradient(to right, var(--clr-orange), var(--clr-pink));
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+        
+        /* Divider */
+        .divider {
+            height: 4px;
+            background: linear-gradient(to right, var(--clr-orange), var(--clr-pink), var(--clr-gold));
+            margin: 0;
+            border: none;
+        }
+        
+        /* Call to Action Section */
+        .cta-section {
+            text-align: center;
+            padding: 8rem 2rem;
+        }
+        
+        .cta-headline {
+            font-family: var(--font-display);
+            font-size: clamp(2rem, 6vw, 5rem);
+            line-height: 1.1;
+            margin-bottom: 2rem;
+        }
+        
+        /* Footer */
+        footer {
+            background-color: var(--clr-black);
+            padding: 3rem 0;
+            text-align: center;
+            border-top: 1px solid rgba(255,255,255,0.1);
+        }
+        
+        footer p {
+            font-size: 0.875rem;
+            opacity: 0.6;
+        }
+        
+        /* Narrative Section - Ad Breakdown */
+        .narrative-section {
+            background: var(--clr-black);
+            position: relative;
+        }
+        
+        .narrative-section::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: 
+                radial-gradient(circle at 10% 20%, rgba(110, 198, 230, 0.08) 0%, transparent 40%),
+                radial-gradient(circle at 90% 80%, rgba(233, 30, 140, 0.08) 0%, transparent 40%);
+            pointer-events: none;
+        }
+        
+        .narrative-quote {
+            font-family: var(--font-editorial);
+            font-size: clamp(1.75rem, 4vw, 2.5rem);
+            font-style: italic;
+            text-align: center;
+            max-width: 900px;
+            margin: 0 auto 3rem;
+            padding: 2rem;
+            border-top: 1px solid rgba(255,255,255,0.2);
+            border-bottom: 1px solid rgba(255,255,255,0.2);
+        }
+        
+        .narrative-quote em {
+            color: var(--clr-sky-blue);
+            font-style: normal;
+        }
+        
+        /* Pay Gap Comparison */
+        .comparison-block {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 2rem;
+            margin: 3rem 0;
+        }
+        
+        @media (max-width: 767px) {
+            .comparison-block {
+                grid-template-columns: 1fr;
+            }
+        }
+        
+        .comparison-item {
+            padding: 2rem;
+            background: rgba(255,255,255,0.03);
+            border-radius: 4px;
+            text-align: center;
+        }
+        
+        .comparison-item.nba {
+            border-top: 4px solid var(--clr-sky-blue);
+        }
+        
+        .comparison-item.wnba {
+            border-top: 4px solid var(--clr-pink);
+        }
+        
+        .comparison-label {
+            font-family: var(--font-display);
+            font-size: 1.5rem;
+            letter-spacing: 0.1em;
+            margin-bottom: 1rem;
+        }
+        
+        .comparison-value {
+            font-family: var(--font-display);
+            font-size: clamp(2rem, 5vw, 3.5rem);
+        }
+        
+        .comparison-item.nba .comparison-value {
+            color: var(--clr-sky-blue);
+        }
+        
+        .comparison-item.wnba .comparison-value {
+            color: var(--clr-pink);
+        }
+        
+        .comparison-note {
+            font-size: 0.9rem;
+            opacity: 0.7;
+            margin-top: 0.5rem;
+        }
+        
+        /* Voices Section */
+        .voices-grid {
+            display: grid;
+            gap: 2rem;
+            margin: 3rem 0;
+        }
+        
+        .voice-item {
+            padding: 2rem;
+            background: rgba(255,255,255,0.03);
+            border-left: 3px solid var(--clr-pink);
+            transition: background 0.3s ease;
+        }
+        
+        .voice-item:hover {
+            background: rgba(255,255,255,0.06);
+        }
+        
+        .voice-quote {
+            font-family: var(--font-editorial);
+            font-size: 1.25rem;
+            font-style: italic;
+            margin-bottom: 1rem;
+            line-height: 1.6;
+        }
+        
+        .voice-name {
+            font-family: var(--font-display);
+            font-size: 0.9rem;
+            letter-spacing: 0.1em;
+            color: var(--clr-orange);
+        }
+        
+        /* Stats Placeholder */
+        .stats-placeholder {
+            background: rgba(255,255,255,0.05);
+            border: 2px dashed rgba(255,255,255,0.2);
+            border-radius: 4px;
+            padding: 3rem;
+            text-align: center;
+            margin: 2rem 0;
+        }
+        
+        .stats-placeholder-title {
+            font-family: var(--font-display);
+            font-size: 1.5rem;
+            letter-spacing: 0.1em;
+            color: var(--clr-orange);
+            margin-bottom: 0.5rem;
+        }
+        
+        .stats-placeholder-text {
+            font-style: italic;
+            opacity: 0.6;
+        }
+        
+        /* Parallax-like effect for images */
+        .parallax-img {
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .parallax-img img {
+            transition: transform 0.1s linear;
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Hero Section -->
+    <section class="hero">
+        <div class="hero-content">
+            <h1 class="hero-tagline">
+                <span class="line-1">The Noise.</span>
+                <span class="line-2">The Movement.</span>
+                <span class="line-3">The Gatekeepers.</span>
+            </h1>
+            <p class="hero-subtitle">WNBA Players Deserve Equitable Pay: <strong>Angel Reese's Fuel Campaign Proves It!</strong></p>
+        </div>
+        <div class="scroll-indicator">
+            <span></span>
+        </div>
+    </section>
+
+    <!-- Definitions Section -->
+    <section class="section-dark">
+        <div class="container">
+            <div class="definition-block reveal">
+                <h2 class="definition-term noise">The Noise</h2>
+                <p class="definition-text">The chaotic soundtrack, the debates, the headlines, the doubters, and the nonstop commentary. The spotlight is unavoidable, and the world is finally paying attention.</p>
+            </div>
+            
+            <div class="definition-block reveal">
+                <h2 class="definition-term movement">The Movement</h2>
+                <p class="definition-text">A cultural force powered by athletes who dominate on the court and bring a level of skill and influence that cannot be ignored, and a generation that understands the true value and impact of these players.</p>
+            </div>
+            
+            <div class="definition-block reveal">
+                <h2 class="definition-term gatekeepers">The Gatekeepers</h2>
+                <p class="definition-text">The systems that determine visibility and value, controlling the marketing dollars, media space, and compensation structures that dictate the value of a contract long before a player steps on the court.</p>
+            </div>
+            
+            <div class="reveal" style="margin-top: 3rem;">
+                <p class="body-text" style="font-size: 1.35rem; max-width: 900px;">Angel Reese's "Fuel" campaign does not just step into this moment. <span class="highlight">It sets the whole thing on fire</span>, showing what happens when culture, visibility, and investment finally collide.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Train Platform Image -->
+    <section class="section-dark py-0">
+        <div class="container-fluid px-0">
+            <div class="img-full reveal-scale">
+                <div class="img-placeholder" style="min-height: 400px;">
+                    <span>[ TRAIN PLATFORM IMAGE ]</span>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <hr class="divider">
+
+    <!-- Numbers Section -->
+    <section class="section-light">
+        <div class="container">
+            <span class="section-label reveal">The Data</span>
+            <h2 class="headline reveal">Numbers Don't Lie</h2>
+            
+            <p class="body-text reveal">The WNBA has experienced unprecedented growth in viewership. The 2025 WNBA postseason averaged 1.2 million viewers, making it the most-watched postseason in WNBA history. Sponsorship revenue has increased by 52% since 2022, while merchandise sales surged over 250%, signaling expanding fan engagement and marketing opportunities. However, challenges remain, particularly regarding equitable media visibility, marketing investments, and salaries.</p>
+            
+            <div class="stats-grid reveal">
+                <div class="stat-item">
+                    <div class="stat-number">1.2M</div>
+                    <div class="stat-label">Average Postseason Viewers</div>
+                </div>
+                <div class="stat-item">
+                    <div class="stat-number">+52%</div>
+                    <div class="stat-label">Sponsorship Revenue Since 2022</div>
+                </div>
+                <div class="stat-item">
+                    <div class="stat-number">+250%</div>
+                    <div class="stat-label">Merchandise Sales Growth</div>
+                </div>
+            </div>
+            
+            <!-- Viewership Image Placeholder -->
+            <div class="img-full reveal-scale">
+                <div class="img-placeholder">
+                    <span>[ VIEWERSHIP IMAGE ]</span>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Media Coverage Section -->
+    <section class="section-dark">
+        <div class="container">
+            <span class="section-label reveal">Media Exposure</span>
+            <h2 class="headline-editorial reveal"><em>Seen,</em> But Not Equally</h2>
+            
+            <p class="body-text reveal">But growth alone does not guarantee opportunity. Visibility decides who gets valued. In spite of its notoriety and influence, the WNBA still lags behind the NBA in consistent, high-value media coverage, a critical factor that impacts marketing investments. This ongoing underexposure contributes to salary disparities that persist despite the league's commercial and cultural growth.</p>
+            
+            <p class="body-text reveal">Although the WNBA has improved its national visibility, like the Indiana Fever broadcasting/streaming 41 of 44 games, the gap remains substantial between the number of games the NBA broadcasts nationally and the WNBA. The estimate for the WNBA 2025 regular season nationally televised and streamed games was 50–100, depending on how national and streamed games are counted and whether all network and streaming platforms are included. As opposed to 247 nationally televised games during the NBA's regular season.</p>
+            
+            <div class="comparison-block reveal">
+                <div class="comparison-item nba">
+                    <div class="comparison-label">NBA</div>
+                    <div class="comparison-value">247</div>
+                    <div class="comparison-note">Nationally Televised Games</div>
+                </div>
+                <div class="comparison-item wnba">
+                    <div class="comparison-label">WNBA</div>
+                    <div class="comparison-value">50-100</div>
+                    <div class="comparison-note">Nationally Televised Games</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Marketing Investments Section -->
+    <section class="section-editorial">
+        <div class="container">
+            <span class="section-label reveal">Investment</span>
+            <h2 class="headline-editorial reveal">Brands Are <em>Betting Big</em></h2>
+            
+            <p class="body-text reveal">Likewise, ad spend has increased by 139% across all women's sports; however, although more brands have invested in ads, the increase is largely due to Disney's higher CPMs (cost to reach 1,000 views). The CPMs were $180 for WNBA playoff ads, compared to $55-$75 for NBA game ads.</p>
+            
+            <p class="body-text reveal">WNBA athletes are becoming more powerful marketing assets capable of driving substantial brand value. Angel Reese of the Chicago Sky has rapidly grown her brand beyond basketball, securing over 20 endorsement deals with top brands like McDonald's, Reese's, and Reebok. This surge in attention is not exclusive to Reese; other leading players, such as Sabrina Ionescu and Breanna Stewart of the New York Liberty, Las Vegas Aces' A'ja Wilson, Caitlin Clark of the Indiana Fever, and Paige Bueckers of the Dallas Wings, also command influential endorsements that elevate the league's overall marketability.</p>
+            
+            <div class="stats-grid reveal">
+                <div class="stat-item">
+                    <div class="stat-number">+139%</div>
+                    <div class="stat-label">Ad Spend in Women's Sports</div>
+                </div>
+                <div class="stat-item">
+                    <div class="stat-number">$180</div>
+                    <div class="stat-label">WNBA Playoff Ad CPM</div>
+                </div>
+                <div class="stat-item">
+                    <div class="stat-number">20+</div>
+                    <div class="stat-label">Reese's Endorsement Deals</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <hr class="divider">
+
+    <!-- The Pay Gap Section -->
+    <section class="section-dark">
+        <div class="container">
+            <span class="section-label reveal">The Reality</span>
+            <h2 class="headline reveal">The Pay Gap</h2>
+            
+            <p class="body-text reveal">Yet still in 2025, the average WNBA salary is approximately $102,000 and 9.3% of the league's revenue, while the average NBA salary exceeds $13 million with guaranteed revenue of 49 to 51%, highlighting the urgent need for more equitable investment and revenue sharing to support fair pay for women athletes. This stark pay gap underscores the need for more equitable revenue-sharing and investment in women's professional basketball. However, despite these marketing successes and rising endorsement opportunities, WNBA players continue to face significant salary gaps compared to NBA players.</p>
+            
+            <div class="comparison-block reveal">
+                <div class="comparison-item nba">
+                    <div class="comparison-label">NBA Average</div>
+                    <div class="comparison-value">$13M+</div>
+                    <div class="comparison-note">49-51% Revenue Share</div>
+                </div>
+                <div class="comparison-item wnba">
+                    <div class="comparison-label">WNBA Average</div>
+                    <div class="comparison-value">$102K</div>
+                    <div class="comparison-note">9.3% Revenue Share</div>
+                </div>
+            </div>
+            
+            <!-- Salary Chart Image -->
+            <div class="img-full reveal-scale">
+                <div class="img-container">
+                    <img src="images/Annual Salaries.png" alt="Average Annual Salaries NBA vs. WNBA 2024/25">
+                </div>
+            </div>
+            
+            <!-- Revenue Chart Image -->
+            <div class="img-full reveal-scale">
+                <div class="img-container">
+                    <img src="images/Revenue.png" alt="WNBA Annual Revenue Growth">
+                </div>
+            </div>
+            
+            <!-- Press Conference Image -->
+            <div class="img-full reveal-scale">
+                <div class="img-container">
+                    <img src="images/Conference.png" alt="Reese and Cardoso at Chicago Sky press conference">
+                </div>
+                <p class="img-caption">Reese and Cardoso via Chicago State of Mind Sports</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Player Voices Section -->
+    <section class="section-light">
+        <div class="container">
+            <span class="section-label reveal">In Their Words</span>
+            <h2 class="headline-editorial reveal">The Players <em>Speak Out</em></h2>
+            
+            <p class="body-text reveal">The players themselves have been increasingly vocal about their low salaries.</p>
+            
+            <div class="voices-grid">
+                <div class="voice-item reveal">
+                    <p class="voice-quote">"The WNBA doesn't pay my bills at all. I don't even think it pays one of my bills."</p>
+                    <p class="voice-name">Angel Reese</p>
+                </div>
+                
+                <div class="voice-item reveal">
+                    <p class="voice-quote">"We're not asking to get paid what the men get paid, we're asking to get paid the same percentage of revenue shared."</p>
+                    <p class="voice-name">Kelsey Plum, Las Vegas Aces</p>
+                </div>
+                
+                <div class="voice-item reveal">
+                    <p class="voice-quote">"We should be paid more, and hopefully that's the case moving forward, as the league continues to grow."</p>
+                    <p class="voice-name">Caitlin Clark</p>
+                </div>
+                
+                <div class="voice-item reveal">
+                    <p class="voice-quote">"Notoriously low-paid stars like Caitlin Clark should just be grateful the league has given them a platform that enables them to earn money from sponsorship."</p>
+                    <p class="voice-name">Napheesa Collier, Minnesota Lynx — referencing WNBA Commissioner Cathy Engelbert</p>
+                </div>
+            </div>
+            
+            <p class="body-text reveal">Players did not just talk about their frustrations; they showed them. Before the All-Star Game, players took to the court in black T-shirts with a bold statement, "Pay us what you owe us."</p>
+            
+            <!-- Pay Us Image -->
+            <div class="img-full reveal-scale">
+                <div class="img-container">
+                    <img src="images/Pay Us.png" alt="WNBA players wearing Pay Us What You Owe Us shirts">
+                </div>
+                <p class="img-caption">Trevor Ruszkowski-Imagn Images via Yahoo Sports</p>
+            </div>
+        </div>
+    </section>
+
+    <hr class="divider">
+
+    <!-- Proving Their Worth Section -->
+    <section class="section-dark">
+        <div class="container">
+            <span class="section-label reveal">The Business Case</span>
+            <h2 class="headline reveal">Proving Their Worth</h2>
+            
+            <p class="body-text reveal">While the league fights for fair value, its players are proving their worth on an entirely different stage. The growing brand power of Reese and her peers (Caitlin Clark, Cameron Brink, and Kelsey Plum), combined with marketing initiatives like the Reebok campaign, clearly shows that the market demand exists.</p>
+            
+            <p class="body-text reveal">Ads shown during the NBA's 2024-2025 season were 24% more effective than the ads shown during primetime TV and cable, while ads during the 2024 WNBA season outperformed primetime ads by 39%. Achieving equality requires intentional efforts.</p>
+            
+            <div class="comparison-block reveal">
+                <div class="comparison-item nba">
+                    <div class="comparison-label">NBA Ads</div>
+                    <div class="comparison-value">+24%</div>
+                    <div class="comparison-note">More Effective Than Primetime</div>
+                </div>
+                <div class="comparison-item wnba">
+                    <div class="comparison-label">WNBA Ads</div>
+                    <div class="comparison-value">+39%</div>
+                    <div class="comparison-note">More Effective Than Primetime</div>
+                </div>
+            </div>
+            
+            <p class="body-text reveal">Major brands are recognizing this opportunity. Reebok's multi-year WNBA partnership and collaboration with Angel Reese demonstrates how strategic investment in women's basketball creates mutually beneficial outcomes for both athletes and the brands. Her 2024 collaboration not only marked the brand's return to basketball but also resulted in the Angel Reese 1, the first WNBA signature shoe from Reebok in almost three decades.</p>
+            
+            <!-- Reebok Image -->
+            <div class="img-full reveal-scale">
+                <div class="img-container">
+                    <img src="images/Reese and Reebok_1.png" alt="Angel Reese Reebok Campaign">
+                </div>
+                <p class="img-caption">Image via Reebok Newsroom</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Who Is Angel Reese Section -->
+    <section class="section-accent">
+        <div class="container">
+            <span class="section-label reveal" style="color: var(--clr-white);">The Player</span>
+            <h2 class="headline reveal">Who is Angel Reese?</h2>
+            
+            <div class="stats-placeholder reveal">
+                <p class="stats-placeholder-title">PLAYER STATISTICS</p>
+                <p class="stats-placeholder-text">Stats content to be added</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Inside Fuel Section -->
+    <section class="narrative-section">
+        <div class="container">
+            <span class="section-label reveal">The Campaign</span>
+            <h2 class="headline reveal">Inside Fuel</h2>
+            
+            <p class="body-text reveal">The Angel Reese 1s, released September 18th, sold out online within minutes, with Reese's AI-powered ad, "Fuel," dropping the day before, providing a concrete example of how this investment strategy translates into advertising practice. Fuel marked a major leap forward for women's sports advertising, demonstrating not only a commitment to AI innovation and athlete-driven storytelling but also underscoring a case for investing in WNBA athletes as drivers of equitable growth.</p>
+            
+            <p class="body-text reveal">The ad does not begin with a spotlight or a staged locker room moment; it begins underground, as the subway train rushes by in a blur, with shrieking wheels and lights flickering. The subway is not glamorous, and that is the point. It is a place where noise is unavoidable. The flickering lights, the unnatural speed of the passing trains, the hyper-real precision in how the camera holds her steady while everything else blurs is the result of advanced Artificial intelligence technology.</p>
+            
+            <!-- Hate Train Image Placeholder -->
+            <div class="img-full reveal-scale">
+                <div class="img-placeholder">
+                    <span>[ THE HATE TRAIN IMAGE ]</span>
+                </div>
+            </div>
+            
+            <p class="body-text reveal">AI is quietly threaded throughout the ad, slightly heightening the environment. The result is a form of reality sharpened, polished, and amplified to support the emotional core of the ad. The subway looks real, but the way the light bends, the way motion distorts, the way the background accelerates while Angel remains grounded; those are the director's choices that made the scene more expressive and intense, supported by AI technology. AI was used not as a replacement for human filmmaking but as an extension and a tool that helped the creative team push beyond the limits of traditional filming, and in record time.</p>
+            
+            <p class="body-text reveal">They intensified the chaos around her, stabilized her frame, and allowed the environment to move with exaggerated intensity without feeling animated or artificial. Her stillness feels almost superhuman. There is a slight warm glow with camera angles changing between wide shots of the station and tight angles of her face. It is a subtle spotlight following her everywhere. That stillness becomes even more powerful when her voice begins the narration. "Noise. Headlines. Hashtags."</p>
+            
+            <div class="narrative-quote reveal">
+                "They talk like they know me, <em>like they built me</em>."
+            </div>
+            
+            <p class="body-text reveal">The camera cuts quickly, giving us a brief glimpse of the shoe. In the middle of all that movement, Angel Reese stands completely still. Not frozen. Centered, owning her space. She knows who she is, but she also knows that the people will always talk. The headlines, the chatter, the endless opinions. She does not pretend that the criticism and negativity do not exist; she acknowledges it directly, and instead of running from it, she defines it.</p>
+            
+            <!-- Like They Know Me Image -->
+            <div class="img-full reveal-scale">
+                <div class="img-container">
+                    <img src="images/Like they Know Me.png" alt="Angel Reese in Fuel ad - Like They Know Me scene">
+                </div>
+            </div>
+            
+            <p class="body-text reveal">Even the moment when Angel steps onto the train feels symbolic. Instead of showing her stepping off the train, escaping the criticism, rising above, and leaving the noise behind, she confidently says, "But I board it anyway". She enters the space where the noise lives, where criticism circulates, where opinions travel fast. Then she flips the narrative. "They call it the hate train; I call it the warm-up." Instantly, we realize the train is a metaphor for part of her preparation, not as a threat.</p>
+            
+            <div class="narrative-quote reveal">
+                "I don't ride the hate train. <em>I drive it. And I own the tracks.</em>"
+            </div>
+            
+            <p class="body-text reveal">When the doors close behind her, the message is clear; she is not running from anything. "Every stop, more opinions, more pressure, more reasons why I am not supposed to be here, but I show up." She is not trying to make you feel sorry for her or cheer for her; she is simply showing you the world she moves in and the voice she hears.</p>
+            
+            <p class="body-text reveal">By the time the final shot lands and the shoe is clearly framed in the light, there is a sense that it is less of a commodity and more of her stamp, her signature. Something earned, not handed. She is not just selling a shoe; she is selling ownership. This is hers; the negativity cannot change that. "This is the Angel Reese 1, by Reebok."</p>
+            
+            <!-- The Shoe Image Placeholder -->
+            <div class="img-full reveal-scale">
+                <div class="img-placeholder">
+                    <span>[ THE SHOE IMAGE ]</span>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <hr class="divider">
+
+    <!-- The Real Bottom Line Section -->
+    <section class="section-light">
+        <div class="container">
+            <span class="section-label reveal">The Conclusion</span>
+            <h2 class="headline reveal">The Real Bottom Line</h2>
+            
+            <p class="body-text reveal">Fuel is not just another ad; it is bigger than that. This is what happens when innovation meets intention. The WNBA players are generating record-breaking attention, driving unprecedented sponsorship value, featured in some of the most innovative campaigns in sports marketing, and yet their compensation remains drastically misaligned with their impact.</p>
+            
+            <p class="body-text reveal">Salaries are more than numbers. They are a statement of value, respect, and sustainability. When media coverage expands, and marketing budgets follow, revenue increases. That revenue should funnel back to the players, fairly and proportionally, like with the NBA players. The fact that WNBA players currently receive only about 9.3% of league revenue reflects not a lack of talent or market demand, but a structural undervaluation.</p>
+            
+            <p class="body-text reveal">Salary equity must remain the end goal. Fuel is proof positive of what is possible. It is a glimpse of what happens when media, marketing, and money move in the same direction. The next step is ensuring that those possibilities translate into financial equity for the women doing the work. When investment matches influence, visibility matches value and pay reflects performance.</p>
+        </div>
+    </section>
+
+    <!-- Call to Action Section -->
+    <section class="cta-section section-accent">
+        <div class="container">
+            <h2 class="cta-headline reveal">The path is clear.<br>The demand is proven.<br>The money is there.</h2>
+            <p class="headline-editorial reveal" style="font-size: clamp(1.5rem, 3vw, 2.5rem); max-width: 800px; margin: 0 auto;">Pay these players what they are worth — <em style="color: var(--clr-gold);">they have already earned it!</em></p>
+        </div>
+    </section>
+
+    <!-- Elite Bigs Image -->
+    <section class="section-dark py-5">
+        <div class="container">
+            <div class="img-full reveal-scale">
+                <div class="img-container">
+                    <img src="images/Elite Bigs.png" alt="Elite WNBA Players">
+                </div>
+                <p class="img-caption">IG @clutchwnba</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <p>&copy; 2025. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <!-- Bootstrap JS -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.7/dist/js/bootstrap.bundle.min.js"></script>
+    
+    <!-- Scroll Animation Script -->
+    <script>
+        // Reveal on Scroll
+        function reveal() {
+            const reveals = document.querySelectorAll('.reveal, .reveal-left, .reveal-right, .reveal-scale');
+            
+            reveals.forEach(element => {
+                const windowHeight = window.innerHeight;
+                const elementTop = element.getBoundingClientRect().top;
+                const elementVisible = 150;
+                
+                if (elementTop < windowHeight - elementVisible) {
+                    element.classList.add('active');
+                }
+            });
+        }
+        
+        // Parallax effect for images
+        function parallax() {
+            const parallaxImages = document.querySelectorAll('.parallax-img img');
+            
+            parallaxImages.forEach(img => {
+                const rect = img.getBoundingClientRect();
+                const scrolled = window.pageYOffset;
+                const rate = (rect.top + scrolled) * 0.1;
+                
+                if (rect.top < window.innerHeight && rect.bottom > 0) {
+                    img.style.transform = `translateY(${rate * 0.1}px)`;
+                }
+            });
+        }
+        
+        // Smooth scroll indicator click
+        document.querySelector('.scroll-indicator')?.addEventListener('click', () => {
+            window.scrollTo({
+                top: window.innerHeight,
+                behavior: 'smooth'
+            });
+        });
+        
+        // Event listeners
+        window.addEventListener('scroll', () => {
+            reveal();
+            parallax();
+        });
+        
+        window.addEventListener('load', reveal);
+        
+        // Add stagger delay to grid items
+        document.querySelectorAll('.stats-grid .stat-item, .voices-grid .voice-item').forEach((item, index) => {
+            item.style.transitionDelay = `${index * 0.1}s`;
+        });
+    </script>
+
+</body>
+</html>
