@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>The Noise. The Movement. The Gatekeepers.</title>
+    <title>WNBA Players Deserve Equitable Pay</title>
     
     <!-- Bootstrap 5.3.7 -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.7/dist/css/bootstrap.min.css" rel="stylesheet">
@@ -47,6 +47,8 @@
             font-size: 1.125rem;
             overflow-x: hidden;
         }
+
+        p  a { color: var(--clr-sky-blue); }
         
         /* Navbar Styles */
         .navbar {
@@ -256,10 +258,11 @@
         
         .scroll-indicator {
             position: absolute;
-            bottom: 2rem;
+            bottom: 0.5rem;
             left: 50%;
             transform: translateX(-50%);
             animation: bounce 2s infinite;
+
         }
         
         .scroll-indicator span {
@@ -566,6 +569,53 @@
             margin-bottom: 2rem;
         }
         
+        /* Angel Reese Bio Section */
+.reese-bio {
+    margin-top: 3rem;
+}
+
+.bio-section {
+    margin-bottom: 3rem;
+    padding-bottom: 2rem;
+    border-bottom: 1px solid rgba(255,255,255,0.2);
+}
+
+.bio-section:last-child {
+    border-bottom: none;
+    margin-bottom: 0;
+}
+
+.bio-heading {
+    font-family: var(--font-display);
+    font-size: clamp(1.5rem, 4vw, 2.5rem);
+    letter-spacing: 0.05em;
+    margin-bottom: 1.5rem;
+    color: var(--clr-gold);
+    text-transform: uppercase;
+}
+
+.bio-item {
+    margin-bottom: 1.25rem;
+    padding-left: 1.5rem;
+    border-left: 3px solid var(--clr-white);
+}
+
+.bio-title {
+    font-family: var(--font-editorial);
+    font-size: 1.15rem;
+    font-weight: 600;
+    margin-bottom: 0.25rem;
+    color: var(--clr-white);
+}
+
+.bio-text {
+    font-family: var(--font-body);
+    font-size: 1rem;
+    line-height: 1.6;
+    color: rgba(255,255,255,0.9);
+    margin: 0;
+}
+
         /* Footer */
         footer {
             background-color: var(--clr-black);
@@ -742,7 +792,7 @@
     <!-- Fixed Navbar -->
     <nav class="navbar navbar-expand-lg navbar-dark fixed-top" id="mainNav">
         <div class="container">
-            <a class="navbar-brand" href="#hero">FUEL</a>
+            <a class="navbar-brand" href="#hero">Equitable Pay for WNBA</a>
             <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
                 <span class="navbar-toggler-icon"></span>
             </button>
@@ -779,7 +829,9 @@
                 <span class="line-2">The Movement.</span>
                 <span class="line-3">The Gatekeepers.</span>
             </h1>
-            <p class="hero-subtitle">WNBA Players Deserve Equitable Pay: <br><strong>Angel Reese's Fuel Campaign Proves It!</strong></p>
+            <p class="hero-subtitle">WNBA Players Deserve Equitable Pay: <br><strong>Angel Reese's Fuel Campaign Proves It</strong></p>
+            <img src="images/reese-si.webp" alt="Angel Reese action shot" class="img-fluid">
+            <p class="img-caption">Angel Reese, Kamil Krzaczynski-Imagn, Image via <a href="https://www.si.com/onsi/athlete-lifestyle/news/angel-reese-calls-out-haters-who-call-her-rebound-merchant" target="_blank">Sports Illustrated</a></p>
         </div>
         <div class="scroll-indicator">
             <span></span>
@@ -818,10 +870,12 @@
     <!-- Train Platform Image -->
     <section class="section-dark py-0">
         <div class="container-fluid px-0">
+                       <!-- Train Platform Image -->
             <div class="img-full reveal-scale">
-                <div class="img-placeholder" style="min-height: 400px;">
-                    <span>[ TRAIN PLATFORM IMAGE ]</span>
+                <div class="img-container">
+                    <img src="images/Train_Platform.jpg" alt="Reese on a train platform">
                 </div>
+              
             </div>
         </div>
     </section>
@@ -834,7 +888,7 @@
             <span class="section-label reveal">The Data</span>
             <h2 class="headline reveal">Numbers Don't Lie</h2>
             
-            <p class="body-text reveal">The WNBA has experienced unprecedented growth in viewership. The 2025 WNBA postseason averaged 1.2 million viewers, making it the most-watched postseason in WNBA history. Sponsorship revenue has increased by 52% since 2022, while merchandise sales surged over 250%, signaling expanding fan engagement and marketing opportunities. However, challenges remain, particularly regarding equitable media visibility, marketing investments, and salaries.</p>
+            <p class="body-text reveal">The WNBA has experienced unprecedented growth in viewership. The 2025 WNBA postseason averaged 1.2 million viewers, making it the <a href="https://espnpressroom.com/us/press-releases/2025/10/espns-monumental-wnba-season-sets-new-viewership-records/" target="_blank">most-watched postseason in WNBA history</a>. Sponsorship revenue has increased by <a href="https://www.sportspro.com/news/wnba-revenue-sponsorship-teams-fever-reese-sponsorunited-july-2025/" target="_blank">52% since 2022</a>, while merchandise <a href="https://www.wftv.com/news/wnba-isnt-just-having-moment-its-major-growth-opportunity-small-businesses/QJSR7DVNNBOZBPJ2SINSP2F45U/#:~:text=The%20surge%20in%20WNBA%20fan,only%20expanding%2C%20but%20sticking%20around." target="_blank">sales surged over 250%</a>, signaling expanding fan engagement and marketing opportunities. However, challenges remain, particularly regarding equitable media visibility, marketing investments, and salaries.</p>
             
             <div class="stats-grid reveal">
                 <div class="stat-item">
@@ -851,11 +905,13 @@
                 </div>
             </div>
             
-            <!-- Viewership Image Placeholder -->
+            <!-- Viewership Image -->
+                       
             <div class="img-full reveal-scale">
-                <div class="img-placeholder">
-                    <span>[ VIEWERSHIP IMAGE ]</span>
+                <div class="img-container">
+                    <img src="images/Viewership.png" alt="Viewership data graph">
                 </div>
+                
             </div>
         </div>
     </section>
@@ -866,9 +922,10 @@
             <span class="section-label reveal">Media Exposure</span>
             <h2 class="headline-editorial reveal"><em>Seen,</em> But Not Equally</h2>
             
-            <p class="body-text reveal">But growth alone does not guarantee opportunity. Visibility decides who gets valued. In spite of its notoriety and influence, the WNBA still lags behind the NBA in consistent, high-value media coverage, a critical factor that impacts marketing investments. This ongoing underexposure contributes to salary disparities that persist despite the league's commercial and cultural growth.</p>
+            <p class="body-text reveal">Visibility decides who gets valued, and growth alone does not guarantee opportunity. In spite of its notoriety and influence, the WNBA still lags behind the NBA in consistent, high-value <a href="https://www.swishappeal.com/2024/1/30/24054687/wnba-media-coverage-free-agency-support-financial-stories-popularity-audience-fans-writers-news-espn" target="_blank">media coverage</a>, a critical factor that impacts marketing investments. This ongoing underexposure contributes to salary disparities that persist despite the league's commercial and cultural growth. </p>
             
-            <p class="body-text reveal">Although the WNBA has improved its national visibility, like the Indiana Fever broadcasting/streaming 41 of 44 games, the gap remains substantial between the number of games the NBA broadcasts nationally and the WNBA. The estimate for the WNBA 2025 regular season nationally televised and streamed games was 50–100, depending on how national and streamed games are counted and whether all network and streaming platforms are included. As opposed to 247 nationally televised games during the NBA's regular season.</p>
+            <p class="body-text reveal">Although the WNBA has improved its national visibility, like the <a href="https://www.sbnation.com/wnba/2025/3/20/24390470/wnba-teams-national-television-games-indiana-fever-new-york-liberty-caitlin-clark-las-vegas-aces?utm" target="_blank">Indian Fever</a> broadcasting/streaming <a href="https://fever.wnba.com/news/indiana-fever-to-feature-in-wnba-record-41-national-television-games-in-2025?utm" target="_blank">41 of 44 games</a>, the gap remains substantial between the number of NBA games nationally broadcast and the WNBA. In the 2025 regular season, the WNBA televised about <a href="https://justwomenssports.com/reads/wnba-viewership-booms-even-without-injured-caitlin-clark/?utm" target="_blank">50 to 100 games</a> nationally, depending on how national and streamed games are counted and whether all network and streaming platforms are included. While <a href="https://www.sportspro.com/news/nba-2025-2026-regular-season-streaming-espn-nbc-prime-video-august-2025/" target="_blank">247 NBA games</a> during the regular season were nationally televised.
+</p>
             
             <div class="comparison-block reveal">
                 <div class="comparison-item nba">
@@ -891,9 +948,10 @@
             <span class="section-label reveal">Investment</span>
             <h2 class="headline-editorial reveal">Brands Are <em>Betting Big</em></h2>
             
-            <p class="body-text reveal">Likewise, ad spend has increased by 139% across all women's sports; however, although more brands have invested in ads, the increase is largely due to Disney's higher CPMs (cost to reach 1,000 views). The CPMs were $180 for WNBA playoff ads, compared to $55-$75 for NBA game ads.</p>
+            <p class="body-text reveal">Ad spend has increased by <a href="https://www.edo.com/resources/womens-sports-ad-spend-surges-as-ad-impact-outpaces-primetime" target="_blank">139%</a> across all women’s sports, and more brands have invested in ads; however, the increase is largely due to Disney’s higher CPMs (cost to reach 1,000 views). The CPMs were <a href="https://adage.com/article/digital-marketing-ad-tech-news/inside-disneys-wnba-playoffs-finals-ad-pitch-rates/2581291/" target="_blank">$180</a> for WNBA playoff ads, compared to <a href="https://www.sportsbusinessjournal.com/Articles/2024/09/20/disney-wnba-playoff-ad-rates/#:~:text=Disney%20is%20asking%20for%20increased,WNBA%20revenue%20has%20increased%20641%25." target="_blank">$55-$75</a> for NBA game ads. </p>
             
-            <p class="body-text reveal">WNBA athletes are becoming more powerful marketing assets capable of driving substantial brand value. Angel Reese of the Chicago Sky has rapidly grown her brand beyond basketball, securing over 20 endorsement deals with top brands like McDonald's, Reese's, and Reebok. This surge in attention is not exclusive to Reese; other leading players, such as Sabrina Ionescu and Breanna Stewart of the New York Liberty, Las Vegas Aces' A'ja Wilson, Caitlin Clark of the Indiana Fever, and Paige Bueckers of the Dallas Wings, also command influential endorsements that elevate the league's overall marketability.</p>
+            <p class="body-text reveal">WNBA athletes are becoming more powerful marketing assets capable of driving substantial brand value. <a href="https://www.wnba.com/player/1642291/angel-reese" target="_blank">Angel Reese</a> of the Chicago Sky has rapidly grown her brand beyond basketball, securing over <a href="https://www.sportskeeda.com/us/wnba/angel-reese-endorsement-deals" target="_blank">20 endorsement deals</a> with top brands like McDonald’s, Reese’s, and Reebok. This surge in attention is not exclusive to Reese; other leading players, such as <a href="https://www.forbes.com/sites/michaellore/2023/09/12/sabrina-ionescu-building-her-business-off-the-court-by-learning-from-the-best/" target="_blank">Sabrina Ionescu</a> and <a href="https://about.puma.com/en/newsroom/corporate-news/2021/12-05-2021-puma-signs-wnba-superstar-breanna-stewart-groundbreaking" target="_blank">Breanna Stewart</a> of the New York Liberty, Las Vegas Aces’ <a href="https://www.espn.com/wnba/story/_/id/43023233/sources-wnba-mvp-aja-wilson-nike-reach-6-year-extension" target="_blank">A'ja Wilson</a>, <a href="https://www.sportico.com/personalities/athletes/2025/caitlin-clark-wnba-salary-sponsors-1234878215/" target="_blank">Caitlan Clark</a> of the Indiana Fever, and <a href="https://about.nike.com/en/newsroom/releases/paige-bueckers-player-edition-official-images" target="_blank">Paige Bueckers</a> of the Dallas Wing, also command influential endorsements that elevate the league’s overall marketability.
+            </p>
             
             <div class="stats-grid reveal">
                 <div class="stat-item">
@@ -920,7 +978,8 @@
             <span class="section-label reveal">The Reality</span>
             <h2 class="headline reveal">The Pay Gap</h2>
             
-            <p class="body-text reveal">Yet still in 2025, the average WNBA salary is approximately $102,000 and 9.3% of the league's revenue, while the average NBA salary exceeds $13 million with guaranteed revenue of 49 to 51%, highlighting the urgent need for more equitable investment and revenue sharing to support fair pay for women athletes. This stark pay gap underscores the need for more equitable revenue-sharing and investment in women's professional basketball. However, despite these marketing successes and rising endorsement opportunities, WNBA players continue to face significant salary gaps compared to NBA players.</p>
+            <p class="body-text reveal">Despite the marketing successes and increasing endorsement opportunities, WNBA players still face significant <a href="https://greenlight.com/learning-center/earning/nba-vs-wnba-salary" target="_blank">salary disparities</a> compared to NBA players. In 2025, <a href="https://people.com/how-much-are-wnba-players-paid-11781805#:~:" target="_blank">WNBA players’ salaries</a> range from $66,000 to $242,000, with an average income of $130,000, representing <a href="https://sports.yahoo.com/article/only-asking-similar-percentage-revenue-142100047.html" target="_blank">9.3%</a> of the league’s revenue. Meanwhile, NBA players are guaranteed <a href="https://sports.yahoo.com/article/only-asking-similar-percentage-revenue-142100047.html" target="_blank">49% to 51%</a> of the league’s revenue, with salaries ranging between <a href="https://www.basketball-reference.com/contracts/players.html" target="_blank">$1.3 million and $59 million</a>; the average salary <a href="https://www.basketball-reference.com/contracts/players.html" target="_blank">exceeds $13 million</a>. This stark pay gap highlights the urgent need for more equitable revenue sharing and greater investment in women’s professional basketball. 
+            </p>
             
             <div class="comparison-block reveal">
                 <div class="comparison-item nba">
@@ -938,23 +997,18 @@
             <!-- Salary Chart Image -->
             <div class="img-full reveal-scale">
                 <div class="img-container">
-                    <img src="images/Annual Salaries.png" alt="Average Annual Salaries NBA vs. WNBA 2024/25">
+                    <img src="images/Salaries.png" alt="Average Annual Salaries NBA vs. WNBA 2024/25">
                 </div>
             </div>
             
-            <!-- Revenue Chart Image -->
-            <div class="img-full reveal-scale">
-                <div class="img-container">
-                    <img src="images/Revenue.png" alt="WNBA Annual Revenue Growth">
-                </div>
-            </div>
+        
             
             <!-- Press Conference Image -->
             <div class="img-full reveal-scale">
                 <div class="img-container">
                     <img src="images/Conference.png" alt="Reese and Cardoso at Chicago Sky press conference">
                 </div>
-                <p class="img-caption">Reese and Cardoso via Chicago State of Mind Sports</p>
+                <p class="img-caption">Reese and Cardoso via <a href="https://youtu.be/EtJET-U1PjY?si=Fxxv4BloJxsMe7Nl" target="_blank">Chicago State of Mind Sports</a></p>
             </div>
         </div>
     </section>
@@ -965,7 +1019,7 @@
             <span class="section-label reveal">In Their Words</span>
             <h2 class="headline-editorial reveal">The Players <em>Speak Out</em></h2>
             
-            <p class="body-text reveal">The players themselves have been increasingly vocal about their low salaries.</p>
+            <p class="body-text reveal">The players themselves have been increasingly vocal about their low salaries. <a href="https://x.com/raphousetv2/status/1846540016140304717?ref_src=twsrc%5Etfw%7Ctwcamp%5Etweetembed%7Ctwterm%5E1846540016140304717%7Ctwgr%5E05fe1f2948df513603853f9ee285c8208490a291%7Ctwcon%5Es1_&ref_url=https%3A%2F%2Fwww.marketwatch.com%2Fstory%2Fwnba-star-angel-reese-says-of-her-73-439-salary-does-that-even-pay-my-car-note-085d2e23" target="_blank">Angel Reese</a> put it bluntly, “The WNBA doesn’t pay my bills at all. I don’t even think it pays one of my bills.” <a href="https://justwomenssports.com/reads/wnba-basketball-kelsey-plum-revenue-sharing-pay-gap/" target="_blank">Kelsey Plum</a> of the Las Vegas Aces has repeatedly emphasized that the issue isn’t about matching NBA salaries but about fairness. “We’re not asking to get paid what the men get paid, we’re asking to get <a href="https://open.spotify.com/episode/0sGUk1N25vVJRRUf4rn0w6?si=uCC8V1vuQEm2ybKpzq6Q5g" target="_blank">paid the same percentage of revenue shared</a>.” <a href="https://www.cbssports.com/wnba/news/wnba-all-star-game-2025-caitlin-clark-other-stars-wear-pay-us-what-you-owe-us-shirts-amid-cba-negotiations/" target="_blank">Caitlin Clark</a> echoed the sentiment, saying, “We should be paid more, and hopefully that's the case moving forward, as the league continues to grow.” And veteran <a href="https://youtu.be/Cb1Gk79uYbw?si=lay3WqhdT57CgfHQ" target="_blank">Napheesa Collier</a> of the Minnesota Lynx, referencing a remark from WNBA Commissioner Cathy Engelbert, highlighted just how deep the disconnect can be. “Notoriously low-paid stars like Caitlin Clark should just be grateful the league has given them a platform that enables them to earn money from sponsorship.” </p>
             
             <div class="voices-grid">
                 <div class="voice-item reveal">
@@ -989,14 +1043,14 @@
                 </div>
             </div>
             
-            <p class="body-text reveal">Players did not just talk about their frustrations; they showed them. Before the All-Star Game, players took to the court in black T-shirts with a bold statement, "Pay us what you owe us."</p>
+            <p class="body-text reveal">Players did not just talk about their frustrations; they showed them. Before the All-Star Game, players took to the court in black T-shirts with a bold statement, "<a href="https://www.si.com/onsi/womens-fastbreak/wnba/wnba-players-make-pay-statement-with-all-star-shirts-01k0jkzmn9b6?utm" target="_blank">Pay us what you owe us.</a>"</p>
             
             <!-- Pay Us Image -->
             <div class="img-full reveal-scale">
                 <div class="img-container">
                     <img src="images/Pay Us.png" alt="WNBA players wearing Pay Us What You Owe Us shirts">
                 </div>
-                <p class="img-caption">Trevor Ruszkowski-Imagn Images via Yahoo Sports</p>
+                <p class="img-caption">Trevor Ruszkowski-Imagn Images via <a href="https://sports.yahoo.com/wnba/breaking-news/article/wnba-all-star-2025-players-take-court-in-warm-up-shirts-reading-pay-us-what-you-owe-us-amid-cba-talks-020307772.html" target="_blank">Yahoo Sports</a></p>
             </div>
         </div>
     </section>
@@ -1008,10 +1062,19 @@
         <div class="container">
             <span class="section-label reveal">The Business Case</span>
             <h2 class="headline reveal">Proving Their Worth</h2>
+
+                        <!-- Reebok Image -->
+            <div class="img-full reveal-scale">
+                <div class="img-container">
+                    <img src="images/ReeseReebok_1.png" alt="Angel Reese Reebok Campaign">
+                </div>
+                <p class="img-caption">Image via <a href="https://news.reebok.com/latest-news/angel-reese-and-reebok-reveal-release-date-of-her-first-ever-signature-shoe--the-angel-reese-1---ava/s/dd5bab6a-3ff0-4e46-aac7-31fce17de793" target="_blank">Reebok Newsroom</a></p>
+            </div>
             
-            <p class="body-text reveal">While the league fights for fair value, its players are proving their worth on an entirely different stage. The growing brand power of Reese and her peers (Caitlin Clark, Cameron Brink, and Kelsey Plum), combined with marketing initiatives like the Reebok campaign, clearly shows that the market demand exists.</p>
+            <p class="body-text reveal">While the league fights for fair value, its players are proving their worth on an entirely different stage. The growing brand power of Reese and her peers (<a href="https://www.wnba.com/player/1642286/caitlin-clark" target="_blank">Caitlin Clark</a>, <a href="https://www.wnba.com/player/1642287/cameron-brink" target="_blank">Cameron Brink</a>, and <a href="https://www.wnba.com/player/1628276/kelsey-plum" target="_blank">Kelsey Plum</a>), combined with marketing initiatives like the <a href="https://www.foxla.com/video/1712778" target="_blank">Reebok campaign</a>, clearly shows that the market demand exists.</p>
             
-            <p class="body-text reveal">Ads shown during the NBA's 2024-2025 season were 24% more effective than the ads shown during primetime TV and cable, while ads during the 2024 WNBA season outperformed primetime ads by 39%. Achieving equality requires intentional efforts.</p>
+            <p class="body-text reveal">Ads shown during the NBA's 2024-2025 season were <a href="https://www.edo.com/resources/nba-ads-preview-2025" target="_blank">24% more effective</a> than the ads shown during primetime TV and cable, while ads during the 2024 WNBA season outperformed primetime ads by 39%. Achieving equality requires intentional efforts. 
+            </p>
             
             <div class="comparison-block reveal">
                 <div class="comparison-item nba">
@@ -1026,15 +1089,9 @@
                 </div>
             </div>
             
-            <p class="body-text reveal">Major brands are recognizing this opportunity. Reebok's multi-year WNBA partnership and collaboration with Angel Reese demonstrates how strategic investment in women's basketball creates mutually beneficial outcomes for both athletes and the brands. Her 2024 collaboration not only marked the brand's return to basketball but also resulted in the Angel Reese 1, the first WNBA signature shoe from Reebok in almost three decades.</p>
+            <p class="body-text reveal">Major brands are recognizing this opportunity. Reebok's multi-year WNBA partnership and collaboration with Angel Reese demonstrates how strategic investment in women's basketball creates mutually beneficial outcomes for both athletes and the brands. Her 2024 collaboration not only marked the brand's return to basketball but also resulted in the Angel Reese 1, the <a href="https://andscape.com/features/the-complete-history-of-signature-sneakers-in-the-wnba/" target="_blank">first WNBA signature shoe from Reebok in almost three decades</a>. </p>
             
-            <!-- Reebok Image -->
-            <div class="img-full reveal-scale">
-                <div class="img-container">
-                    <img src="images/Reese and Reebok_1.png" alt="Angel Reese Reebok Campaign">
-                </div>
-                <p class="img-caption">Image via Reebok Newsroom</p>
-            </div>
+
         </div>
     </section>
 
@@ -1043,11 +1100,87 @@
         <div class="container">
             <span class="section-label reveal" style="color: var(--clr-white);">The Player</span>
             <h2 class="headline reveal">Who is Angel Reese?</h2>
-            
-            <div class="stats-placeholder reveal">
-                <p class="stats-placeholder-title">PLAYER STATISTICS</p>
-                <p class="stats-placeholder-text">Stats content to be added</p>
+
+         <!-- Angel Reese Image -->
+            <div class="img-full reveal-scale">
+                <div class="img-container">
+                    <img src="images/Reese6.jpg" alt="Angel Reese with basketball">
+                </div>
+                <p class="img-caption">Angel Reese, Brett Davis-Imagn Images, via <a href="https://www.bleachernation.com/bulls/2025/07/06/angel-reese-all-star-2/" target="_blank">Bleacher Nation</a></p>
             </div>
+            
+            <div class="reese-bio">
+            <div class="bio-section reveal">
+                <h3 class="bio-heading">Dominance on the Court</h3>
+                
+                <div class="bio-item">
+                    <h4 class="bio-title">Elite College Career</h4>
+                    <p class="bio-text">Posted 20.6 points and 14.6 rebounds per game (2022-23)</p>
+                </div>
+                
+                <div class="bio-item">
+                    <h4 class="bio-title">NCAA Champion (2023)</h4>
+                    <p class="bio-text">Led LSU to its first-ever women's basketball national championship.</p>
+                </div>
+                
+                <div class="bio-item">
+                    <h4 class="bio-title">NCAA Record Holder</h4>
+                    <p class="bio-text">Set the single-season NCAA record with 34 double-doubles.</p>
+                </div>
+                
+                <div class="bio-item">
+                    <h4 class="bio-title">"Bayou Barbie" Dominance</h4>
+                    <p class="bio-text">Averaged 23 PPG and 15.4 RPG during LSU's championship — one of the best postseason runs ever.</p>
+                </div>
+                
+                <div class="bio-item">
+                    <h4 class="bio-title">MVP</h4>
+                    <p class="bio-text">Awarded 2023 NCAA Tournament MVP for her dominance on the court.</p>
+                </div>
+                
+                <div class="bio-item">
+                    <h4 class="bio-title">Top WNBA Rookie Performer</h4>
+                    <p class="bio-text">Averaged double-digit scoring and rebounding.</p>
+                </div>
+                
+                <div class="bio-item">
+                    <h4 class="bio-title">Rookie Record Holder</h4>
+                    <p class="bio-text">Holds the rookie record of 26 double-doubles.</p>
+                </div>
+            </div>
+            
+            <div class="bio-section reveal">
+                <h3 class="bio-heading">Market Power</h3>
+                
+                <div class="bio-item">
+                    <h4 class="bio-title">NIL Superstar Before Turning Pro</h4>
+                    <p class="bio-text">Rated as one of the Top 5 highest-earning NIL athletes in all of college sports — male or female — with deals exceeding $1.5 million.</p>
+                </div>
+                
+                <div class="bio-item">
+                    <h4 class="bio-title">Over 20 Major Endorsements</h4>
+                    <p class="bio-text">Secured major partnerships with Reebok, McDonald's, Starry, Beats by Dre, Victoria's Secret, and more.</p>
+                </div>
+                
+                <div class="bio-item">
+                    <h4 class="bio-title">Reebok Signature Athlete</h4>
+                    <p class="bio-text">Became the first WNBA player in almost 30 years to receive a signature shoe with Reebok.</p>
+                </div>
+            </div>
+            
+            <div class="bio-section reveal">
+                <h3 class="bio-heading">Cultural Icon & Media Driver</h3>
+                
+                <div class="bio-item">
+                    <h4 class="bio-title">"I'm a brand."</h4>
+                    <p class="bio-text">Angel Reese's now-famous line — "I'm not just a basketball player. I'm a brand." — demonstrates her impact in both sports and culture.</p>
+                </div>
+                
+                <div class="bio-item">
+                    <p class="bio-text">Generated massive media interest: coverage spikes, social discussion, and viral game moments. Reese has been called a "cultural engine" for women's basketball.</p>
+                </div>
+            </div>
+        </div>
         </div>
     </section>
 
@@ -1055,17 +1188,22 @@
     <section class="narrative-section" id="campaign">
         <div class="container">
             <span class="section-label reveal">The Campaign</span>
-            <h2 class="headline reveal">Inside Fuel</h2>
+            <h2 class="headline reveal">Inside Fuel, The Campaign</h2>
             
-            <p class="body-text reveal">The Angel Reese 1s, released September 18th, sold out online within minutes, with Reese's AI-powered ad, "Fuel," dropping the day before, providing a concrete example of how this investment strategy translates into advertising practice. Fuel marked a major leap forward for women's sports advertising, demonstrating not only a commitment to AI innovation and athlete-driven storytelling but also underscoring a case for investing in WNBA athletes as drivers of equitable growth.</p>
+            <p class="body-text reveal">The Angel Reese 1s, released September 18th, sold out online within minutes, with Reese's AI-powered ad, "Fuel," dropping the day before, provided a concrete example of how this investment strategy translates into advertising practice. Fuel marked a major leap forward for women's sports advertising, demonstrating not only a commitment to AI innovation and athlete-driven storytelling but also underscoring a case for investing in WNBA athletes as drivers of equitable growth.</p>
+
+              <div class="reveal" style="margin: 0 auto;">
+                <iframe width="1200" height="675" style="max-width: 100%;" src="https://www.youtube.com/embed/MyeHdAAcJO0?si=ZM_BpXdS72s3_vhf" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+            </div>
             
             <p class="body-text reveal">The ad does not begin with a spotlight or a staged locker room moment; it begins underground, as the subway train rushes by in a blur, with shrieking wheels and lights flickering. The subway is not glamorous, and that is the point. It is a place where noise is unavoidable. The flickering lights, the unnatural speed of the passing trains, the hyper-real precision in how the camera holds her steady while everything else blurs is the result of advanced Artificial intelligence technology.</p>
             
-            <!-- Hate Train Image Placeholder -->
+            <!-- Hate Train Image  -->
             <div class="img-full reveal-scale">
-                <div class="img-placeholder">
-                    <span>[ THE HATE TRAIN IMAGE ]</span>
+                <div class="img-container">
+                    <img src="images/HateTrain.png" alt="Angel Reese Hate Train">
                 </div>
+                
             </div>
             
             <p class="body-text reveal">AI is quietly threaded throughout the ad, slightly heightening the environment. The result is a form of reality sharpened, polished, and amplified to support the emotional core of the ad. The subway looks real, but the way the light bends, the way motion distorts, the way the background accelerates while Angel remains grounded; those are the director's choices that made the scene more expressive and intense, supported by AI technology. AI was used not as a replacement for human filmmaking but as an extension and a tool that helped the creative team push beyond the limits of traditional filming, and in record time.</p>
@@ -1076,7 +1214,7 @@
                 "They talk like they know me, <em>like they built me</em>."
             </div>
             
-            <p class="body-text reveal">The camera cuts quickly, giving us a brief glimpse of the shoe. In the middle of all that movement, Angel Reese stands completely still. Not frozen. Centered, owning her space. She knows who she is, but she also knows that the people will always talk. The headlines, the chatter, the endless opinions. She does not pretend that the criticism and negativity do not exist; she acknowledges it directly, and instead of running from it, she defines it.</p>
+            <p class="body-text reveal">The camera cuts quickly, giving us a brief glimpse of the shoe. In the middle of all that movement, Angel Reese stands completely still. Not frozen. Centered, owning her space. She knows who she is, but she also knows that the people will always talk. The headlines, the chatter, the endless opinions. She does not pretend that the criticism and negativity do not exist; she acknowledges it directly, and instead of running from it, she defines it.  "They talk like they know me, <em>like they built me</em>."</p>
             
             <!-- Like They Know Me Image -->
             <div class="img-full reveal-scale">
@@ -1085,20 +1223,22 @@
                 </div>
             </div>
             
-            <p class="body-text reveal">Even the moment when Angel steps onto the train feels symbolic. Instead of showing her stepping off the train, escaping the criticism, rising above, and leaving the noise behind, she confidently says, "But I board it anyway". She enters the space where the noise lives, where criticism circulates, where opinions travel fast. Then she flips the narrative. "They call it the hate train; I call it the warm-up." Instantly, we realize the train is a metaphor for part of her preparation, not as a threat.</p>
+            <p class="body-text reveal">Even the moment when Angel steps onto the train feels symbolic. Instead of showing her stepping off the train, escaping the criticism, rising above, and leaving the noise behind, she confidently says, "But I board it anyway". She enters the space where the noise lives, where criticism circulates, where opinions travel fast. Then she flips the narrative. "They call it the hate train; I call it the warm-up." In an instant, what once looked like a threat reveals itself as the wind-up before the strike — the push that propels her, the fuel source that drives her.</p>
             
+            
+            
+            <p class="body-text reveal">When the doors close behind her, the message is clear; she is not running from anything. "Every stop, more opinions, more pressure, more reasons why I am not supposed to be here, but I show up." She is not trying to make you feel sorry for her or cheer for her; she is simply showing you the world she moves in and the voice she hears.</p>
+
             <div class="narrative-quote reveal">
                 "I don't ride the hate train. <em>I drive it. And I own the tracks.</em>"
             </div>
             
-            <p class="body-text reveal">When the doors close behind her, the message is clear; she is not running from anything. "Every stop, more opinions, more pressure, more reasons why I am not supposed to be here, but I show up." She is not trying to make you feel sorry for her or cheer for her; she is simply showing you the world she moves in and the voice she hears.</p>
-            
             <p class="body-text reveal">By the time the final shot lands and the shoe is clearly framed in the light, there is a sense that it is less of a commodity and more of her stamp, her signature. Something earned, not handed. She is not just selling a shoe; she is selling ownership. This is hers; the negativity cannot change that. "This is the Angel Reese 1, by Reebok."</p>
             
-            <!-- The Shoe Image Placeholder -->
+             <!-- The Shoe Image -->
             <div class="img-full reveal-scale">
-                <div class="img-placeholder">
-                    <span>[ THE SHOE IMAGE ]</span>
+                <div class="img-container">
+                    <img src="images/Shoe.png" alt="Angel Reese Shoe">
                 </div>
             </div>
         </div>
@@ -1112,11 +1252,14 @@
             <span class="section-label reveal">The Conclusion</span>
             <h2 class="headline reveal">The Real Bottom Line</h2>
             
-            <p class="body-text reveal">Fuel is not just another ad; it is bigger than that. This is what happens when innovation meets intention. The WNBA players are generating record-breaking attention, driving unprecedented sponsorship value, featured in some of the most innovative campaigns in sports marketing, and yet their compensation remains drastically misaligned with their impact.</p>
+            <p class="body-text reveal">Fuel is not just another ad; it is bigger than that. Fuel is what happens when innovation meets intention. WNBA players are generating record-breaking attention, driving unprecedented sponsorship value, and being featured in some of the most innovative campaigns in sports marketing, yet their compensation remains drastically misaligned with their impact. 
+            </p>
             
-            <p class="body-text reveal">Salaries are more than numbers. They are a statement of value, respect, and sustainability. When media coverage expands, and marketing budgets follow, revenue increases. That revenue should funnel back to the players, fairly and proportionally, like with the NBA players. The fact that WNBA players currently receive only about 9.3% of league revenue reflects not a lack of talent or market demand, but a structural undervaluation.</p>
+            <p class="body-text reveal">Salaries are more than numbers; they are a statement of value, respect, and sustainability. When media coverage expands, and marketing budgets follow, revenue increases. That revenue should funnel back to the players, fairly and proportionally, like with the NBA players. The fact that WNBA players currently receive only about 9.3% of league revenue reflects not a lack of talent or market demand, but a structural <a href="https:/www.passthaball.com/post/mebounds-and-the-blueprint-angel-reese-is-building-more-than-a-legacy" target="_blank">undervaluation</a>. 
+            </p>
             
-            <p class="body-text reveal">Salary equity must remain the end goal. Fuel is proof positive of what is possible. It is a glimpse of what happens when media, marketing, and money move in the same direction. The next step is ensuring that those possibilities translate into financial equity for the women doing the work. When investment matches influence, visibility matches value and pay reflects performance.</p>
+            <p class="body-text reveal">Salary equity must remain the end goal. Fuel is proof positive of what is possible, a glimpse of what happens when media, marketing, and money move in the same direction. The next step is ensuring that those possibilities translate into financial equity for the women doing the work. When investment matches influence, visibility matches value, and pay reflects performance. 
+            </p>
         </div>
     </section>
 
