@@ -791,6 +791,26 @@
         .parallax-img img {
             transition: transform 0.1s linear;
         }
+
+        /* Responsive YouTube Embed Container */
+        .video-container {
+            position: relative;
+            width: 100%;
+            padding-bottom: 56.25%; /* 16:9 aspect ratio */
+            height: 0;
+            overflow: hidden;
+            margin: 2rem 0;
+        }
+
+        .video-container iframe {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            border: 0;
+        }
+
     </style>
 </head>
 <body>
@@ -855,7 +875,7 @@
                 <p class="body-text" style="font-size: 1.35rem; max-width: 900px;">Angel Reese's "Fuel" campaign does not just step into this moment. <span class="highlight">It sets the whole thing on fire</span>, showing what happens when culture, visibility, and investment finally collide.</p>
             </div>
 
-             <div class="reveal" style="margin: 0 auto;">
+             <div class="reveal video-container" style="margin: 0 auto;">
                 <iframe width="1200" height="675" style="max-width: 100%; border: none;" src="https://www.youtube.com/embed/MyeHdAAcJO0?si=ZM_BpXdS72s3_vhf" title="YouTube video player" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
             </div>
 
@@ -879,7 +899,7 @@
     </section>
 
     <!-- Train Platform Image -->
-    <section class="section-dark py-0">
+    <div class="section-dark py-0">
         <div class="container-fluid px-0">
                        <!-- Train Platform Image -->
             <div class="img-full reveal-scale">
@@ -889,7 +909,7 @@
               
             </div>
         </div>
-    </section>
+    </div>
 
     <hr class="divider">
 
@@ -1203,7 +1223,7 @@
             
             <p class="body-text reveal">The Angel Reese 1s, released September 18th, sold out online within minutes, with Reese's AI-powered ad, "Fuel," dropping the day before, provided a concrete example of how this investment strategy translates into advertising practice. Fuel marked a major leap forward for women's sports advertising, demonstrating not only a commitment to AI innovation and athlete-driven storytelling but also underscoring a case for investing in WNBA athletes as drivers of equitable growth.</p>
 
-              <div class="reveal" style="margin: 0 auto;">
+              <div class="reveal video-container" style="margin: 0 auto;">
                 <iframe width="1200" height="675" style="max-width: 100%; border: none;" src="https://www.youtube.com/embed/MyeHdAAcJO0?si=ZM_BpXdS72s3_vhf" title="YouTube video player" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
             </div>
             
@@ -1241,7 +1261,7 @@
             <p class="body-text reveal">Even the moment when Angel steps onto the train feels symbolic. Instead of showing her stepping off the train, escaping the criticism, rising above, and leaving the noise behind, she confidently says, "But I board it anyway". She enters the space where the noise lives, where criticism circulates, where opinions travel fast. Then she flips the narrative. </p>
             
             <div class="narrative-quote reveal">
-                "They call it the hate train; <em>I call it the warm-up</em>."
+                "They call it the hate train;<br><em>I call it the warm-up</em>."
             </div>
             
             <p class="body-text reveal">
@@ -1257,7 +1277,7 @@
             <p class="body-text reveal">She is not trying to make you feel sorry for her or cheer for her; she is simply showing you the world she moves in and the voice she hears.</p>
 
             <div class="narrative-quote reveal">
-                "I don't ride the hate train. <em>I drive it. And I own the tracks.</em>"
+                "I don't ride the hate train.<br><em>I drive it. And I own the tracks.</em>"
             </div>
             
             <p class="body-text reveal">By the time the final shot lands and the shoe is clearly framed in the light, there is a sense that it is less of a commodity and more of her stamp, her signature. Something earned, not handed. She is not just selling a shoe; she is selling ownership. This is hers; the negativity cannot change that. "This is the Angel Reese 1, by Reebok."</p>
@@ -1299,7 +1319,7 @@
     </section>
 
     <!-- Elite Bigs Image -->
-    <section class="section-dark py-5">
+    <div class="section-dark py-5">
         <div class="container">
             <div class="img-full reveal-scale">
                 <div class="img-container">
@@ -1308,7 +1328,7 @@
                 <p class="img-caption">IG @clutchwnba</p>
             </div>
         </div>
-    </section>
+    </div>
 
     <!-- Footer -->
     <footer>
